@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Bookings Monitor | Aurora Grand</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Dashboard Custom Styles */
+        body {
+            background-color: var(--charcoal);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 10rem 2rem 4rem;
+            flex: 1;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 1.5rem;
+        }
+
+        .dashboard-title h1 {
+            font-size: 2.5rem;
+            color: var(--white);
+            font-family: var(--font-heading);
+            margin-bottom: 0.5rem;
+        }
+
+        .dashboard-title p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .back-to-site-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            background-color: rgba(255, 255, 255, 0.02);
+            transition: var(--transition-smooth);
+        }
+
+        .back-to-site-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            background-color: rgba(200, 167, 78, 0.05);
+        }
+
+        /* Metrics grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .metric-card {
+            background: rgba(26, 26, 26, 0.55);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            transition: var(--transition-smooth);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(200, 167, 78, 0.25);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .metric-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: rgba(200, 167, 78, 0.08);
+            border: 1px solid rgba(200, 167, 78, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.35rem;
+        }
+
+        .metric-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            opacity: 0.6;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-val {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--white);
+            font-family: var(--font-body);
+        }
+
+        /* Controls Section */
+        .controls-section {
+            background: rgba(26, 26, 26, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-wrapper {
+            flex: 2;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-wrapper i {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            opacity: 0.7;
+        }
+
+        .search-wrapper input {
+            padding-left: 3rem !important;
+        }
+
+        .filter-wrapper {
+            flex: 1;
+            min-width: 180px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-wrapper label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        /* Table container */
+        .table-container {
+            background: rgba(26, 26, 26, 0.55);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            overflow-x: auto;
+            margin-bottom: 3rem;
+        }
+
+        .bookings-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+
+        .bookings-table th {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            font-size: 0.75rem;
+            background-color: rgba(255, 255, 255, 0.01);
+        }
+
+        .bookings-table td {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            vertical-align: middle;
+            color: var(--text-light);
+        }
+
+        .bookings-table tr:hover td {
+            background-color: rgba(255, 255, 255, 0.015);
+        }
+
+        /* Guest details style */
+        .guest-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .guest-name {
+            font-weight: 500;
+            color: var(--white);
+            font-size: 0.95rem;
+        }
+
+        .guest-contact {
+            font-size: 0.75rem;
+            opacity: 0.6;
+        }
+
+        /* Status badges */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-badge.pending {
+            background-color: rgba(200, 167, 78, 0.08);
+            border: 1px solid rgba(200, 167, 78, 0.3);
+            color: var(--gold);
+        }
+
+        .status-badge.confirmed {
+            background-color: rgba(46, 117, 89, 0.08);
+            border: 1px solid rgba(46, 117, 89, 0.4);
+            color: #4ade80;
+        }
+
+        .status-badge.cancelled {
+            background-color: rgba(220, 53, 69, 0.08);
+            border: 1px solid rgba(220, 53, 69, 0.4);
+            color: #f87171;
+        }
+
+        /* Action Buttons */
+        .actions-cell {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .action-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 0.85rem;
+        }
+
+        .action-btn.confirm-btn {
+            background-color: rgba(74, 222, 128, 0.06);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+        }
+
+        .action-btn.confirm-btn:hover {
+            background-color: #4ade80;
+            color: var(--charcoal);
+            border-color: #4ade80;
+        }
+
+        .action-btn.cancel-btn {
+            background-color: rgba(248, 113, 113, 0.06);
+            border: 1px solid rgba(248, 113, 113, 0.2);
+            color: #f87171;
+        }
+
+        .action-btn.cancel-btn:hover {
+            background-color: #f87171;
+            color: var(--charcoal);
+            border-color: #f87171;
+        }
+
+        .action-btn.delete-btn {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+        }
+
+        .action-btn.delete-btn:hover {
+            background-color: var(--white);
+            color: var(--charcoal);
+            border-color: var(--white);
+        }
+
+        /* Empty state style */
+        .empty-state {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .empty-state i {
+            font-size: 3.5rem;
+            color: var(--gold);
+            opacity: 0.3;
+            margin-bottom: 1.5rem;
+        }
+
+        .empty-state h3 {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .empty-state p {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 1024px) {
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container {
+                padding-top: 8rem;
+            }
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            .controls-section {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress-bar"></div>
+
+    <!-- Navigation Header -->
+    <header class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-crown" style="color: var(--gold); margin-right: 0.25rem;"></i> Aurora Grand
+            </a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="about.html">About</a></li>
+                <li class="nav-item"><a href="rooms.html">Rooms</a></li>
+                <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-container">
+        <div class="dashboard-header">
+            <div class="dashboard-title">
+                <h1>Admin Reservations Portal</h1>
+                <p>Monitor, track, and manage all luxury booking requests at ECR Chennai resort.</p>
+            </div>
+            <a href="index.html" class="back-to-site-btn">
+                <i class="fa-solid fa-arrow-left-long"></i> Back to Site
+            </a>
+        </div>
+
+        <!-- Metrics Cards -->
+        <div class="metrics-grid">
+            <!-- Total Bookings -->
+            <div class="metric-card">
+                <div class="metric-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+                <div class="metric-info">
+                    <span class="metric-label">Total Bookings</span>
+                    <h2 id="metric-total" class="metric-val">0</h2>
+                </div>
+            </div>
+
+            <!-- Confirmed -->
+            <div class="metric-card">
+                <div class="metric-icon" style="color: #4ade80; background-color: rgba(74, 222, 128, 0.08); border-color: rgba(74, 222, 128, 0.2);"><i class="fa-solid fa-circle-check"></i></div>
+                <div class="metric-info">
+                    <span class="metric-label">Confirmed</span>
+                    <h2 id="metric-confirmed" class="metric-val" style="color: #4ade80;">0</h2>
+                </div>
+            </div>
+
+            <!-- Pending -->
+            <div class="metric-card">
+                <div class="metric-icon" style="color: var(--gold); background-color: rgba(200, 167, 78, 0.08); border-color: rgba(200, 167, 78, 0.2);"><i class="fa-solid fa-circle-notch fa-spin"></i></div>
+                <div class="metric-info">
+                    <span class="metric-label">Pending</span>
+                    <h2 id="metric-pending" class="metric-val" style="color: var(--gold);">0</h2>
+                </div>
+            </div>
+
+            <!-- Revenue -->
+            <div class="metric-card">
+                <div class="metric-icon" style="color: #DFCA85; background-color: rgba(223, 202, 133, 0.08); border-color: rgba(223, 202, 133, 0.2);"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                <div class="metric-info">
+                    <span class="metric-label">Revenue (INR)</span>
+                    <h2 id="metric-revenue" class="metric-val" style="color: #DFCA85;">₹0</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls Section -->
+        <div class="controls-section">
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" class="form-input" placeholder="Search by guest name, email, or phone...">
+            </div>
+
+            <div class="filter-wrapper">
+                <label for="status-filter">Status</label>
+                <select id="status-filter" class="form-input" style="padding: 0.6rem 1rem;">
+                    <option value="all">All Bookings</option>
+                    <option value="pending">Pending</option>
+                    <option value="confirmed">Confirmed</option>
+                    <option value="cancelled">Cancelled</option>
+                </select>
+            </div>
+
+            <div class="filter-wrapper">
+                <label for="room-filter">Room Type</label>
+                <select id="room-filter" class="form-input" style="padding: 0.6rem 1rem;">
+                    <option value="all">All Rooms</option>
+                    <option value="deluxe">Deluxe Room</option>
+                    <option value="executive">Executive Suite</option>
+                    <option value="family">Family Suite</option>
+                    <option value="ocean">Ocean View Room</option>
+                    <option value="presidential">Presidential Suite</option>
+                    <option value="villa">Honeymoon Villa</option>
+                    <option value="royal">Royal Ocean Villa</option>
+                    <option value="grand-family">Grand Family Residence</option>
+                    <option value="sunset-suite">Sunset Ocean Suite</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Bookings Table container -->
+        <div class="table-container">
+            <table class="bookings-table" id="bookings-table">
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Guest Details</th>
+                        <th>Room Type</th>
+                        <th>Schedule &amp; Guests</th>
+                        <th>Special Requests</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="bookings-list">
+                    <!-- Dynamic rendering -->
+                </tbody>
+            </table>
+            
+            <!-- Empty State -->
+            <div id="table-empty-state" class="empty-state" style="display: none;">
+                <i class="fa-regular fa-folder-open"></i>
+                <h3>No Bookings Found</h3>
+                <p>There are no booking entries matching your filter criteria.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Aurora Grand Luxury Hotel Admin Portal. Confidential.</p>
+            <div class="footer-bottom-links">
+                <a href="index.html">Main Website</a>
+                <a href="contact.html">Guest Booking Page</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Handling -->
+    <script>
+        // Core Room mappings and prices
+        const roomRates = {
+            'deluxe': { name: 'Deluxe Room', rate: 9500 },
+            'executive': { name: 'Executive Suite', rate: 15500 },
+            'family': { name: 'Family Suite', rate: 18000 },
+            'ocean': { name: 'Ocean View Room', rate: 14000 },
+            'presidential': { name: 'Presidential Suite', rate: 55000 },
+            'villa': { name: 'Honeymoon Villa', rate: 38000 },
+            'royal': { name: 'Royal Ocean Villa', rate: 75000 },
+            'grand-family': { name: 'Grand Family Residence', rate: 25000 },
+            'sunset-suite': { name: 'Sunset Ocean Suite', rate: 20000 }
+        };
+
+        // Seeding realistic mock data if bookings list is empty
+        const mockBookings = [
+            {
+                id: 'AG-841920',
+                name: 'Rajesh Kumar',
+                email: 'rajesh.kumar@gmail.com',
+                phone: '+91 98400 12345',
+                roomType: 'deluxe',
+                checkin: '2026-07-05',
+                checkout: '2026-07-08',
+                guests: '2',
+                specialRequests: 'Prefers high floor with ocean breeze. Requires airport pickup.',
+                status: 'Confirmed',
+                date: '2026-06-25'
+            },
+            {
+                id: 'AG-915041',
+                name: 'Priya Sharma',
+                email: 'priya.sharma@yahoo.co.in',
+                phone: '+91 98840 98765',
+                roomType: 'villa',
+                checkin: '2026-07-10',
+                checkout: '2026-07-14',
+                guests: '2',
+                specialRequests: 'Honeymoon arrangement. Vintage wine bottle and candle-lit arrangements.',
+                status: 'Pending',
+                date: '2026-06-27'
+            },
+            {
+                id: 'AG-103984',
+                name: 'Dr. Anand Krishnan',
+                email: 'a.krishnan@iitm.ac.in',
+                phone: '+91 94440 54321',
+                roomType: 'presidential',
+                checkin: '2026-07-15',
+                checkout: '2026-07-17',
+                guests: '3',
+                specialRequests: 'VIP protocol. Strict security clearance and organic meals only.',
+                status: 'Confirmed',
+                date: '2026-06-24'
+            },
+            {
+                id: 'AG-728103',
+                name: 'Sneha Patel',
+                email: 'sneha.patel@corporate.in',
+                phone: '+91 91760 12345',
+                roomType: 'ocean',
+                checkin: '2026-07-02',
+                checkout: '2026-07-04',
+                guests: '2',
+                specialRequests: 'Twin beds requested.',
+                status: 'Cancelled',
+                date: '2026-06-20'
+            },
+            {
+                id: 'AG-583021',
+                name: 'Vikram Singh',
+                email: 'vikram.singh@gmail.com',
+                phone: '+91 98401 56789',
+                roomType: 'executive',
+                checkin: '2026-07-20',
+                checkout: '2026-07-23',
+                guests: '1',
+                specialRequests: 'Late check-out request.',
+                status: 'Pending',
+                date: '2026-06-28'
+            }
+        ];
+
+        // Fetch bookings
+        function getBookings() {
+            let bookings = localStorage.getItem('aurora_bookings');
+            if (!bookings) {
+                localStorage.setItem('aurora_bookings', JSON.stringify(mockBookings));
+                return mockBookings;
+            }
+            return JSON.parse(bookings);
+        }
+
+        // Save bookings
+        function saveBookings(bookings) {
+            localStorage.setItem('aurora_bookings', JSON.stringify(bookings));
+        }
+
+        // Format Currency Helper
+        function formatINR(number) {
+            return new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+                maximumFractionDigits: 0
+            }).format(number);
+        }
+
+        // Calculate nights
+        function getNights(checkin, checkout) {
+            const start = new Date(checkin);
+            const end = new Date(checkout);
+            const diffTime = Math.abs(end - start);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays || 1;
+        }
+
+        // Render Dashboard Stats and Table
+        function renderDashboard() {
+            const bookings = getBookings();
+            
+            // Calculate stats
+            let total = bookings.length;
+            let confirmed = 0;
+            let pending = 0;
+            let revenue = 0;
+
+            bookings.forEach(b => {
+                if (b.status === 'Confirmed') {
+                    confirmed++;
+                    // Calculate revenue
+                    const roomInfo = roomRates[b.roomType] || { rate: 0 };
+                    const nights = getNights(b.checkin, b.checkout);
+                    revenue += roomInfo.rate * nights;
+                } else if (b.status === 'Pending') {
+                    pending++;
+                }
+            });
+
+            // Update stats DOM
+            document.getElementById('metric-total').innerText = total;
+            document.getElementById('metric-confirmed').innerText = confirmed;
+            document.getElementById('metric-pending').innerText = pending;
+            document.getElementById('metric-revenue').innerText = formatINR(revenue);
+
+            // Filtering
+            const searchVal = document.getElementById('search-input').value.toLowerCase().trim();
+            const statusFilter = document.getElementById('status-filter').value;
+            const roomFilter = document.getElementById('room-filter').value;
+
+            const filteredBookings = bookings.filter(b => {
+                const matchesSearch = b.name.toLowerCase().includes(searchVal) || 
+                                      b.email.toLowerCase().includes(searchVal) || 
+                                      b.phone.includes(searchVal) ||
+                                      b.id.toLowerCase().includes(searchVal);
+                
+                const matchesStatus = statusFilter === 'all' || b.status.toLowerCase() === statusFilter;
+                const matchesRoom = roomFilter === 'all' || b.roomType === roomFilter;
+
+                return matchesSearch && matchesStatus && matchesRoom;
+            });
+
+            // Render Table Rows
+            const tbody = document.getElementById('bookings-list');
+            tbody.innerHTML = '';
+
+            if (filteredBookings.length === 0) {
+                document.getElementById('bookings-table').style.display = 'none';
+                document.getElementById('table-empty-state').style.display = 'block';
+                return;
+            }
+
+            document.getElementById('bookings-table').style.display = 'table';
+            document.getElementById('table-empty-state').style.display = 'none';
+
+            // Sort by booking date descending
+            filteredBookings.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            filteredBookings.forEach(b => {
+                const roomInfo = roomRates[b.roomType] || { name: b.roomType, rate: 0 };
+                const nights = getNights(b.checkin, b.checkout);
+                const totalCost = roomInfo.rate * nights;
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="font-weight: 500; font-family: monospace; color: var(--gold);">${b.id}</td>
+                    <td>
+                        <div class="guest-details">
+                            <span class="guest-name">${b.name}</span>
+                            <span class="guest-contact"><i class="fa-solid fa-envelope"></i> ${b.email}</span>
+                            <span class="guest-contact"><i class="fa-solid fa-phone"></i> ${b.phone}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="font-weight: 500;">${roomInfo.name}</div>
+                        <div style="font-size: 0.75rem; opacity: 0.6;">${formatINR(roomInfo.rate)} / night</div>
+                    </td>
+                    <td>
+                        <div><i class="fa-regular fa-calendar-check" style="color:var(--gold);"></i> <strong>${b.checkin}</strong> to <strong>${b.checkout}</strong></div>
+                        <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.25rem;">
+                            <span>${nights} ${nights === 1 ? 'Night' : 'Nights'}</span> &bull; 
+                            <span>${b.guests} ${b.guests === '1' ? 'Guest' : 'Guests'}</span>
+                        </div>
+                        <div style="font-weight: 600; color: #DFCA85; margin-top: 0.4rem; font-size: 0.8rem;">Est. Total: ${formatINR(totalCost)}</div>
+                    </td>
+                    <td style="max-width: 250px; font-size: 0.8rem; opacity: 0.8; line-height: 1.5; font-style: italic;">
+                        ${b.specialRequests ? `"${b.specialRequests}"` : '<span style="opacity:0.4;">None</span>'}
+                    </td>
+                    <td>
+                        <span class="status-badge ${b.status.toLowerCase()}">
+                            <i class="${b.status === 'Confirmed' ? 'fa-solid fa-circle-check' : b.status === 'Pending' ? 'fa-solid fa-circle-notch fa-spin' : 'fa-solid fa-circle-xmark'}"></i>
+                            ${b.status}
+                        </span>
+                    </td>
+                    <td>
+                        <div class="actions-cell">
+                            ${b.status !== 'Confirmed' ? `
+                                <button onclick="updateStatus('${b.id}', 'Confirmed')" class="action-btn confirm-btn" aria-label="Confirm Booking" title="Confirm Booking">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                            ` : ''}
+                            ${b.status !== 'Cancelled' ? `
+                                <button onclick="updateStatus('${b.id}', 'Cancelled')" class="action-btn cancel-btn" aria-label="Cancel Booking" title="Cancel Booking">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            ` : ''}
+                            <button onclick="deleteBooking('${b.id}')" class="action-btn delete-btn" aria-label="Delete Entry" title="Delete Entry">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Action: Update Booking Status
+        window.updateStatus = function(id, newStatus) {
+            let bookings = getBookings();
+            const index = bookings.findIndex(b => b.id === id);
+            if (index !== -1) {
+                bookings[index].status = newStatus;
+                saveBookings(bookings);
+                renderDashboard();
+            }
+        };
+
+        // Action: Delete Booking
+        window.deleteBooking = function(id) {
+            if (confirm(`Are you sure you want to delete reservation ${id}?`)) {
+                let bookings = getBookings();
+                bookings = bookings.filter(b => b.id !== id);
+                saveBookings(bookings);
+                renderDashboard();
+            }
+        };
+
+        // Initialize UI listeners
+        document.getElementById('search-input').addEventListener('input', renderDashboard);
+        document.getElementById('status-filter').addEventListener('change', renderDashboard);
+        document.getElementById('room-filter').addEventListener('change', renderDashboard);
+
+        // Initial render
+        document.addEventListener('DOMContentLoaded', () => {
+            renderDashboard();
+        });
+
+        // Thin gold scroll progress bar indicator
+        window.addEventListener('scroll', () => {
+            const progressBar = document.getElementById('scroll-progress');
+            if (progressBar) {
+                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                if (totalHeight > 0) {
+                    const progress = (window.scrollY / totalHeight) * 100;
+                    progressBar.style.width = `${progress}%`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

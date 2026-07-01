@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact &amp; Reservations | Book Your Stay | Aurora Grand</title>
+    <meta name="description" content="Get in touch with Aurora Grand Luxury Hotel. Submit your reservation inquiry, view our location on ECR Chennai, and read our frequently asked questions.">
+    <meta name="keywords" content="hotel contact, booking form, hotel reservation, Chennai hotel address, FAQ accordion, location map">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aurora-grand-ecr.netlify.app/contact.html">
+
+    <!-- Performance Prefetch/Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Contact &amp; Reservations | Book Your Stay | Aurora Grand">
+    <meta property="og:description" content="Get in touch with Aurora Grand Luxury Hotel. Submit your reservation inquiry, view our location on ECR Chennai, and read our frequently asked questions.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200">
+    <meta property="og:url" content="https://aurora-grand-ecr.netlify.app/contact.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact &amp; Reservations | Book Your Stay | Aurora Grand">
+    <meta name="twitter:description" content="Get in touch with Aurora Grand Luxury Hotel. Submit your reservation inquiry, view our location on ECR Chennai, and read our frequently asked questions.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200">
+    <meta name="twitter:url" content="https://aurora-grand-ecr.netlify.app/contact.html">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured Data Schemas -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ContactPage",
+          "@id": "https://aurora-grand-ecr.netlify.app/contact.html#webpage",
+          "url": "https://aurora-grand-ecr.netlify.app/contact.html",
+          "name": "Contact & Reservations | Book Your Stay | Aurora Grand",
+          "description": "Get in touch with Aurora Grand Luxury Hotel. Submit your reservation inquiry, view our location on ECR Chennai, and read our frequently asked questions."
+        },
+        {
+          "@type": "Hotel",
+          "@id": "https://aurora-grand-ecr.netlify.app/#hotel",
+          "name": "Aurora Grand",
+          "telephone": "+91 44 234 5678",
+          "email": "reservations@auroragrand.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "122 Luxury Avenue, East Coast Road (ECR), Kovalam",
+            "addressLocality": "Chennai",
+            "addressRegion": "Tamil Nadu",
+            "postalCode": "603112",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 12.7944,
+            "longitude": 80.2443
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://aurora-grand-ecr.netlify.app/contact.html#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What are the standard check-in and check-out times?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standard check-in is at 2:00 PM and check-out is at 12:00 PM. Early check-in or late check-out is subject to availability."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is airport transfer service available?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer premium airport shuttle and private car transfers. This service can be requested during booking."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://aurora-grand-ecr.netlify.app/contact.html#breadcrumb",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://aurora-grand-ecr.netlify.app/"
+          }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact",
+            "item": "https://aurora-grand-ecr.netlify.app/contact.html"
+          }]
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="dark-theme">
+
+    <!-- Dynamic Loading Screen -->
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-content">
+            <i class="fa-solid fa-crown loader-logo"></i>
+            <h2 class="loader-title">Aurora Grand</h2>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress-bar"></div>
+
+    <!-- Floating Book Now Button -->
+    <a href="contact.html" class="floating-booking-btn" aria-label="Book Now" title="Book Now">
+        <i class="fa-solid fa-calendar-days"></i>
+    </a>
+
+    <!-- Scroll-to-Top Button -->
+    <div class="scroll-top"><i class="fa-solid fa-chevron-up"></i></div>
+
+    <!-- Navigation Header -->
+    <header class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-crown" style="color: var(--gold); margin-right: 0.25rem;"></i> Aurora Grand
+            </a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="about.html">About</a></li>
+                <li class="nav-item"><a href="rooms.html">Rooms</a></li>
+                <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-item active"><a href="contact.html">Contact</a></li>
+                <li class="nav-item mobile-cta" style="display: none; margin-top: 2rem;">
+                    <a href="contact.html" class="btn btn-primary" style="color: #FFFFFF;">Book Now</a>
+                </li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-outline-gold" style="padding: 0.6rem 1.5rem; font-size: 0.75rem;">Book Now</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="page-banner-bg" style="background-image: url('https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1920');"></div>
+        <div class="page-banner-content reveal">
+            <h1>Contact &amp; Reservations</h1>
+            <div class="page-breadcrumbs">
+                <a href="index.html">Home</a> / <span>Contact</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Split Section -->
+    <section class="contact-layout-section container">
+        <div class="contact-layout">
+            <!-- Booking Form -->
+            <div class="booking-form-box reveal delay-1">
+                <h3>Book Your Stay</h3>
+                <form id="bookingForm" class="contact-form" novalidate>
+                    <!-- Name -->
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="e.g. Sarah Jenkins">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="e.g. sarah@example.com">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="e.g. +91 9876543210">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <!-- Room Type -->
+                    <div class="form-group">
+                        <label for="roomType">Select Room Type</label>
+                        <select id="roomType" class="form-input">
+                            <option value="" disabled selected>Select a Suite / Villa</option>
+                            <option value="deluxe">Deluxe Room (₹9,500/night)</option>
+                            <option value="executive">Executive Suite (₹15,500/night)</option>
+                            <option value="family">Family Suite (₹18,000/night)</option>
+                            <option value="ocean">Ocean View Room (₹14,000/night)</option>
+                            <option value="presidential">Presidential Suite (₹55,000/night)</option>
+                            <option value="villa">Honeymoon Villa (₹38,000/night)</option>
+                            <option value="royal">Royal Ocean Villa (₹75,000/night)</option>
+                            <option value="grand-family">Grand Family Residence (₹25,000/night)</option>
+                            <option value="sunset-suite">Sunset Ocean Suite (₹20,000/night)</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <!-- Check-in -->
+                    <div class="form-group">
+                        <label for="checkin">Check-in Date</label>
+                        <input type="date" id="checkin" class="form-input">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <!-- Check-out -->
+                    <div class="form-group">
+                        <label for="checkout">Check-out Date</label>
+                        <input type="date" id="checkout" class="form-input">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <!-- Guests -->
+                    <div class="form-group">
+                        <label for="guests">Guests count</label>
+                        <select id="guests" class="form-input">
+                            <option value="" disabled selected>Select occupants</option>
+                            <option value="1">1 Adult</option>
+                            <option value="2">2 Adults</option>
+                            <option value="3">3 Adults</option>
+                            <option value="4">4 Adults / Family</option>
+                            <option value="5">5+ Adults / Group</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <!-- Special Requests -->
+                    <div class="form-group full-width">
+                        <label for="specialRequests">Special Requests (Optional)</label>
+                        <textarea id="specialRequests" class="form-input" placeholder="e.g. Airport pick-up schedule, dietary requirements, bed preference..."></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group full-width" style="margin-top: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Booking Request</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="contact-info-box reveal delay-2">
+                <div class="contact-detail-section">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item-list">
+                        <!-- Address -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                            <div class="contact-info-details">
+                                <h4>Address</h4>
+                                <p>122 Luxury Avenue, East Coast Road (ECR),<br>Kovalam, Chennai, India - 603112</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                            <div class="contact-info-details">
+                                <h4>Phone</h4>
+                                <p>+91 44 234 5678<br>+91 44 234 5679</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                            <div class="contact-info-details">
+                                <h4>Email</h4>
+                                <p>reservations@auroragrand.com<br>info@auroragrand.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><i class="fa-solid fa-clock"></i></div>
+                            <div class="contact-info-details">
+                                <h4>Business Hours</h4>
+                                <p>Front Desk &amp; Lobby: 24/7<br>Signature Spa: 08:00 AM - 09:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Map Container -->
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-desc">Quickly find answers regarding luxury room check-ins, reservations, cancellations, and premium amenities.</p>
+            </div>
+
+            <div class="faq-container">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are the check-in and check-out times?</h3>
+                        <div class="faq-icon-box"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Check-in begins at 03:00 PM. Check-out is required by 12:00 PM. Requesting early check-in or late check-out can be arranged with our guest relations desk in advance, subject to suite availability.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer complimentary airport shuttle services?</h3>
+                        <div class="faq-icon-box"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Yes, we provide complimentary luxury private chauffeur shuttle services direct from the airport terminal to our resort lobby for all suite and villa bookings. Kindly mention your flight number in the Special Requests field.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is breakfast included in the booking rates?</h3>
+                        <div class="faq-icon-box"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Yes, all room bookings include access to our gourmet Michelin-star breakfast buffet served daily at the main dining room from 07:00 AM to 10:30 AM.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is your booking cancellation policy?</h3>
+                        <div class="faq-icon-box"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Reservations can be modified or cancelled free of charge up to 48 hours prior to your scheduled check-in date. Cancellations made inside the 48-hour window will incur a charge equal to the first night's rate.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="font-size: 1.75rem; margin-bottom: 1.5rem;">
+                    <i class="fa-solid fa-crown" style="color: var(--gold); margin-right: 0.25rem;"></i> Aurora Grand
+                </a>
+                <p class="footer-col-desc" style="margin-bottom: 1.5rem;">Experience absolute five-star luxury with customized spa services, gourmet foods, and opulent ocean suites.</p>
+                <div class="footer-contact-info" style="margin-bottom: 1.75rem; font-size: 0.85rem; color: var(--text-light); line-height: 1.8;">
+                    <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-location-dot" style="color: var(--gold); margin-right: 0.75rem; width: 14px;"></i> 122 Luxury Avenue, ECR, Chennai, India</p>
+                    <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: var(--gold); margin-right: 0.75rem; width: 14px;"></i> +91 44 234 5678</p>
+                    <p><i class="fa-solid fa-envelope" style="color: var(--gold); margin-right: 0.75rem; width: 14px;"></i> reservations@auroragrand.com</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="#" class="footer-social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Col 2 -->
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="rooms.html">Rooms &amp; Suites</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+
+            <!-- Col 3 -->
+            <div class="footer-col">
+                <h4 class="footer-title">Our Services</h4>
+                <div class="footer-links">
+                    <a href="rooms.html">Room Booking</a>
+                    <a href="index.html#amenities">Spa &amp; Wellness</a>
+                    <a href="index.html#amenities">Fine Dining</a>
+                    <a href="index.html#offers">Special Events</a>
+                    <a href="index.html#amenities">Airport Pickup</a>
+                </div>
+            </div>
+
+            <!-- Col 4 -->
+            <div class="footer-col">
+                <h4 class="footer-title">Newsletter</h4>
+                <p class="footer-newsletter-text">Subscribe to our newsletter to receive updates on exclusive VIP promotional packages.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Aurora Grand Luxury Hotel. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms &amp; Conditions</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS and Main Script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Leaflet Map (ECR Chennai Luxury Resort Location coordinates)
+        const map = L.map('map', {
+            scrollWheelZoom: false
+        }).setView([12.7944, 80.2443], 13); // ECR Chennai Beach Location
+
+        // Dark thematic map tiles matching our charcoal design
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        // Custom gold ring circular marker style
+        const goldMarkerHtml = `
+            <div style="
+                background-color: #C8A74E; 
+                width: 16px; 
+                height: 16px; 
+                border: 3px solid #FFFFFF; 
+                border-radius: 50%; 
+                box-shadow: 0 0 12px #C8A74E;
+                animation: marker-pulse 2s infinite ease-in-out;
+            "></div>
+            <style>
+                @keyframes marker-pulse {
+                    0% { transform: scale(1); box-shadow: 0 0 12px #C8A74E; }
+                    50% { transform: scale(1.15); box-shadow: 0 0 18px #C8A74E; }
+                    100% { transform: scale(1); box-shadow: 0 0 12px #C8A74E; }
+                }
+            </style>
+        `;
+
+        const goldIcon = L.divIcon({
+            className: 'custom-gold-marker',
+            html: goldMarkerHtml,
+            iconSize: [16, 16],
+            iconAnchor: [8, 8]
+        });
+
+        // Add Marker
+        L.marker([12.7944, 80.2443], { icon: goldIcon }).addTo(map)
+            .bindPopup('<b style="color:#C8A74E; font-size:1.1em; font-family:var(--font-heading);"><i class="fa-solid fa-crown" style="color:var(--gold); margin-right:4px;"></i> Aurora Grand</b><br><span style="font-size:0.9em; font-family:var(--font-body);">122 Luxury Avenue, ECR, Chennai, India</span>')
+            .openPopup();
+            
+        // Pre-fill Room Type dropdown if specified in URL query
+        const urlParams = new URLSearchParams(window.location.search);
+        const roomParam = urlParams.get('room');
+        if (roomParam) {
+            const dropdown = document.getElementById('roomType');
+            if (dropdown) {
+                dropdown.value = roomParam;
+            }
+        }
+
+        // Pre-fill Special Promo Alert if specified in URL query
+        const promoParam = urlParams.get('promo');
+        if (promoParam) {
+            const promoTitles = {
+                'weekend': 'Weekend Escape (20% Off)',
+                'honeymoon': 'Honeymoon Package (30% Off)',
+                'business': 'Business Package (25% Off)',
+                'family': 'Family Vacation (15% Off)'
+            };
+            const promoTitle = promoTitles[promoParam];
+            if (promoTitle) {
+                const formBox = document.querySelector('.booking-form-box');
+                const promoAlert = document.createElement('div');
+                promoAlert.style.backgroundColor = 'rgba(200, 167, 78, 0.1)';
+                promoAlert.style.border = '1px solid #C8A74E';
+                promoAlert.style.color = '#C8A74E';
+                promoAlert.style.padding = '1rem 1.5rem';
+                promoAlert.style.marginBottom = '2rem';
+                promoAlert.style.borderRadius = 'var(--border-radius)';
+                promoAlert.style.fontSize = '0.9rem';
+                promoAlert.style.display = 'flex';
+                promoAlert.style.justifyContent = 'space-between';
+                promoAlert.style.alignItems = 'center';
+                promoAlert.innerHTML = `
+                    <span><i class="fa-solid fa-tags" style="margin-right: 0.5rem;"></i> Special Offer Applied: <strong>${promoTitle}</strong></span>
+                    <i class="fa-solid fa-xmark" style="cursor: pointer; padding: 0.2rem;" onclick="this.parentElement.remove()"></i>
+                `;
+                formBox.insertBefore(promoAlert, formBox.querySelector('form'));
+            }
+        }
+    </script>
+
+    <!-- Tawk.to Live Chat Widget -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/64aff1bbcc26a871b028448a/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+</body>
+</html>

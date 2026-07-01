@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Grand | Luxury Hotel & Resort | Experience Beyond Comfort</title>
+    <meta name="description" content="Discover world-class luxury at Aurora Grand. Indulge in premium rooms, exceptional fine dining, refreshing infinity pools, and exclusive spa therapies. Book your five-star getaway today.">
+    <meta name="keywords" content="Aurora Grand, luxury hotel, five-star resort, premium suites, beach villa, infinity pool, spa resort, luxury hospitality">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aurora-grand-ecr.netlify.app/">
+
+    <!-- Performance Prefetch/Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Aurora Grand | Luxury Hotel & Resort">
+    <meta property="og:description" content="Discover world-class luxury at Aurora Grand. Indulge in premium rooms, exceptional fine dining, refreshing infinity pools, and exclusive spa therapies.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200">
+    <meta property="og:url" content="https://aurora-grand-ecr.netlify.app/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aurora Grand | Luxury Hotel & Resort">
+    <meta name="twitter:description" content="Discover world-class luxury at Aurora Grand. Indulge in premium rooms, exceptional fine dining, refreshing infinity pools, and exclusive spa therapies.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200">
+    <meta name="twitter:url" content="https://aurora-grand-ecr.netlify.app/">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured Data Schemas -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://aurora-grand-ecr.netlify.app/#website",
+          "url": "https://aurora-grand-ecr.netlify.app/",
+          "name": "Aurora Grand",
+          "description": "Premium five-star luxury hotel website"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://aurora-grand-ecr.netlify.app/#organization",
+          "name": "Aurora Grand",
+          "url": "https://aurora-grand-ecr.netlify.app/",
+          "logo": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=300",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91 44 234 5678",
+            "contactType": "reservations",
+            "email": "reservations@auroragrand.com"
+          }
+        },
+        {
+          "@type": "Hotel",
+          "@id": "https://aurora-grand-ecr.netlify.app/#hotel",
+          "name": "Aurora Grand",
+          "image": [
+            "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200",
+            "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1200"
+          ],
+          "telephone": "+91 44 234 5678",
+          "email": "reservations@auroragrand.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "122 Luxury Avenue, East Coast Road (ECR), Kovalam",
+            "addressLocality": "Chennai",
+            "addressRegion": "Tamil Nadu",
+            "postalCode": "603112",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 12.7944,
+            "longitude": 80.2443
+          },
+          "url": "https://aurora-grand-ecr.netlify.app/",
+          "starRating": {
+            "@type": "Rating",
+            "ratingValue": 5
+          },
+          "priceRange": "₹9,500 - ₹75,000"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://aurora-grand-ecr.netlify.app/#breadcrumb",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://aurora-grand-ecr.netlify.app/"
+          }]
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="dark-theme">
+
+    <!-- Dynamic Loading Screen -->
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-content">
+            <i class="fa-solid fa-crown loader-logo"></i>
+            <h2 class="loader-title">Aurora Grand</h2>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress-bar"></div>
+
+    <!-- Floating Book Now Button -->
+    <a href="contact.html" class="floating-booking-btn" aria-label="Book Now" title="Book Now">
+        <i class="fa-solid fa-calendar-days"></i>
+    </a>
+
+    <!-- Scroll-to-Top Button -->
+    <div class="scroll-top"><i class="fa-solid fa-chevron-up"></i></div>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-crown" style="color: var(--gold); margin-right: 0.25rem;"></i> Aurora Grand
+            </a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item active"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="about.html">About</a></li>
+                <li class="nav-item"><a href="rooms.html">Rooms</a></li>
+                <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+                <li class="nav-item mobile-cta" style="display: none; margin-top: 2rem;">
+                    <a href="contact.html" class="btn btn-primary" style="color: #FFFFFF;">Book Now</a>
+                </li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-outline-gold" style="padding: 0.6rem 1.5rem; font-size: 0.75rem;">Book Now</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tagline">Welcome to Aurora Grand</span>
+            <h1 class="hero-title">Experience Luxury Beyond Comfort</h1>
+            <p class="hero-subtitle">Discover world-class hospitality with elegant rooms, exceptional dining, and unforgettable experiences.</p>
+            <div class="hero-btns">
+                <a href="contact.html" class="btn btn-primary">Book Now</a>
+                <a href="rooms.html" class="btn btn-secondary">Explore Rooms</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Rooms Section -->
+    <section class="featured-rooms container">
+        <div class="section-header reveal">
+            <span class="section-subtitle">Our Sanctuary</span>
+            <h2 class="section-title">Featured Suites & Villas</h2>
+            <p class="section-desc">Each of our meticulously designed sanctuaries offers an exquisite blend of privacy, sophistication, and breathtaking views.</p>
+        </div>
+
+        <div class="rooms-grid">
+            <!-- Room 1 -->
+            <div class="room-card reveal delay-1">
+                <div class="room-img-container">
+                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=800" alt="Deluxe Room at Aurora Grand" width="800" height="533" loading="lazy">
+                    <span class="room-badge avail">Available</span>
+                </div>
+                <div class="room-info">
+                    <div class="room-meta">
+                        <div class="room-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div class="room-price"><span>₹9,500</span> / Night</div>
+                    </div>
+                    <h3 class="room-name">Deluxe Room</h3>
+                    <div class="room-amenities">
+                        <div class="room-amenity"><i class="fa-solid fa-arrows-left-right"></i> 45 m²</div>
+                        <div class="room-amenity"><i class="fa-solid fa-bed"></i> King Bed</div>
+                        <div class="room-amenity"><i class="fa-solid fa-users"></i> 2 Guests</div>
+                        <div class="room-amenity"><i class="fa-solid fa-calendar-check"></i> Free Cancel</div>
+                    </div>
+                    <a href="contact.html?room=deluxe" class="btn btn-outline-gold">Book Now</a>
+                </div>
+            </div>
+
+            <!-- Room 2 -->
+            <div class="room-card reveal delay-2">
+                <div class="room-img-container">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800" alt="Executive Suite at Aurora Grand" width="800" height="533" loading="lazy">
+                    <span class="room-badge">Popular</span>
+                </div>
+                <div class="room-info">
+                    <div class="room-meta">
+                        <div class="room-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="room-price"><span>₹15,500</span> / Night</div>
+                    </div>
+                    <h3 class="room-name">Executive Suite</h3>
+                    <div class="room-amenities">
+                        <div class="room-amenity"><i class="fa-solid fa-arrows-left-right"></i> 70 m²</div>
+                        <div class="room-amenity"><i class="fa-solid fa-bed"></i> Super King</div>
+                        <div class="room-amenity"><i class="fa-solid fa-users"></i> 2 Guests</div>
+                        <div class="room-amenity"><i class="fa-solid fa-calendar-check"></i> Free Cancel</div>
+                    </div>
+                    <a href="contact.html?room=executive" class="btn btn-outline-gold">Book Now</a>
+                </div>
+            </div>
+
+            <!-- Room 3 -->
+            <div class="room-card reveal delay-3">
+                <div class="room-img-container">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=800" alt="Family Suite at Aurora Grand" width="800" height="533" loading="lazy">
+                    <span class="room-badge avail">Available</span>
+                </div>
+                <div class="room-info">
+                    <div class="room-meta">
+                        <div class="room-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div class="room-price"><span>₹18,000</span> / Night</div>
+                    </div>
+                    <h3 class="room-name">Family Suite</h3>
+                    <div class="room-amenities">
+                        <div class="room-amenity"><i class="fa-solid fa-arrows-left-right"></i> 90 m²</div>
+                        <div class="room-amenity"><i class="fa-solid fa-bed"></i> 2 Double</div>
+                        <div class="room-amenity"><i class="fa-solid fa-users"></i> 4 Guests</div>
+                        <div class="room-amenity"><i class="fa-solid fa-calendar-check"></i> Free Cancel</div>
+                    </div>
+                    <a href="contact.html?room=family" class="btn btn-outline-gold">Book Now</a>
+                </div>
+            </div>
+
+            <!-- Room 4 -->
+            <div class="room-card reveal delay-1">
+                <div class="room-img-container">
+                    <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="Ocean View Room at Aurora Grand" width="800" height="533" loading="lazy">
+                    <span class="room-badge avail">Best Choice</span>
+                </div>
+                <div class="room-info">
+                    <div class="room-meta">
+                        <div class="room-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="room-price"><span>₹14,000</span> / Night</div>
+                    </div>
+                    <h3 class="room-name">Ocean View Room</h3>
+                    <div class="room-amenities">
+                        <div class="room-amenity"><i class="fa-solid fa-arrows-left-right"></i> 55 m²</div>
+                        <div class="room-amenity"><i class="fa-solid fa-bed"></i> Super King</div>
+                        <div class="room-amenity"><i class="fa-solid fa-users"></i> 2 Guests</div>
+                        <div class="room-amenity"><i class="fa-solid fa-calendar-check"></i> Free Cancel</div>
+                    </div>
+                    <a href="contact.html?room=ocean" class="btn btn-outline-gold">Book Now</a>
+                </div>
+            </div>
+
+            <!-- Room 5 -->
+            <div class="room-card reveal delay-2">
+                <div class="room-img-container">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800" alt="Presidential Suite at Aurora Grand" width="800" height="533" loading="lazy">
+                    <span class="room-badge">Exclusive</span>
+                </div>
+                <div class="room-info">
+                    <div class="room-meta">
+                        <div class="room-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="room-price"><span>₹55,000</span> / Night</div>
+                    </div>
+                    <h3 class="room-name">Presidential Suite</h3>
+                    <div class="room-amenities">
+                        <div class="room-amenity"><i class="fa-solid fa-arrows-left-right"></i> 180 m²</div>
+                        <div class="room-amenity"><i class="fa-solid fa-bed"></i> 2 King Beds</div>
+                        <div class="room-amenity"><i class="fa-solid fa-users"></i> 4 Guests</div>
+                        <div class="room-amenity"><i class="fa-solid fa-calendar-check"></i> Free Cancel</div>
+                    </div>
+                    <a href="contact.html?room=presidential" class="btn btn-outline-gold">Book Now</a>
+                </div>
+            </div>
+
+            <!-- Room 6 -->
+            <div class="room-card reveal delay-3">
+                <div class="room-img-container">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800" alt="Honeymoon Villa at Aurora Grand" width="800" height="533" loading="lazy">
+                    <span class="room-badge avail">Special Package</span>
+                </div>
+                <div class="room-info">
+                    <div class="room-meta">
+                        <div class="room-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="room-price"><span>₹38,000</span> / Night</div>
+                    </div>
+                    <h3 class="room-name">Honeymoon Villa</h3>
+                    <div class="room-amenities">
+                        <div class="room-amenity"><i class="fa-solid fa-arrows-left-right"></i> 120 m²</div>
+                        <div class="room-amenity"><i class="fa-solid fa-bed"></i> Canopy King</div>
+                        <div class="room-amenity"><i class="fa-solid fa-users"></i> 2 Guests</div>
+                        <div class="room-amenity"><i class="fa-solid fa-calendar-check"></i> Free Cancel</div>
+                    </div>
+                    <a href="contact.html?room=villa" class="btn btn-outline-gold">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="amenities">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Exquisite Indulgences</span>
+                <h2 class="section-title">Luxury Amenities</h2>
+                <p class="section-desc">Experience services and premium amenities crafted to satisfy your desires and elevate your five-star stay.</p>
+            </div>
+
+            <div class="amenities-grid">
+                <!-- Amenity 1 -->
+                <div class="amenity-card reveal delay-1">
+                    <div class="amenity-icon">
+                        <i class="fa-solid fa-water-ladder"></i>
+                    </div>
+                    <h3 class="amenity-name">Infinity Pool</h3>
+                    <p class="amenity-desc">Heated crystal-clear pool overlooking the sunset horizon.</p>
+                </div>
+
+                <!-- Amenity 2 -->
+                <div class="amenity-card reveal delay-2">
+                    <div class="amenity-icon">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h3 class="amenity-name">Luxury Spa</h3>
+                    <p class="amenity-desc">Therapeutic massages and rejuvenating signature body treatments.</p>
+                </div>
+
+                <!-- Amenity 3 -->
+                <div class="amenity-card reveal delay-3">
+                    <div class="amenity-icon">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <h3 class="amenity-name">Fitness Center</h3>
+                    <p class="amenity-desc">State-of-the-art cardio machines and professional trainers.</p>
+                </div>
+
+                <!-- Amenity 4 -->
+                <div class="amenity-card reveal delay-4">
+                    <div class="amenity-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="amenity-name">Fine Dining</h3>
+                    <p class="amenity-desc">Michelin-star culinary masterpieces prepared by our executive chefs.</p>
+                </div>
+
+                <!-- Amenity 5 -->
+                <div class="amenity-card reveal delay-1">
+                    <div class="amenity-icon">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <h3 class="amenity-name">Free WiFi</h3>
+                    <p class="amenity-desc">Complimentary high-speed fiber internet throughout the resort.</p>
+                </div>
+
+                <!-- Amenity 6 -->
+                <div class="amenity-card reveal delay-2">
+                    <div class="amenity-icon">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <h3 class="amenity-name">Airport Pickup</h3>
+                    <p class="amenity-desc">Luxury private chauffeur service direct from the terminal.</p>
+                </div>
+
+                <!-- Amenity 7 -->
+                <div class="amenity-card reveal delay-3">
+                    <div class="amenity-icon">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <h3 class="amenity-name">Conference Hall</h3>
+                    <p class="amenity-desc">Elegant corporate boardrooms equipped with the latest presentation systems.</p>
+                </div>
+
+                <!-- Amenity 8 -->
+                <div class="amenity-card reveal delay-4">
+                    <div class="amenity-icon">
+                        <i class="fa-solid fa-martini-glass-citrus"></i>
+                    </div>
+                    <h3 class="amenity-name">Rooftop Lounge</h3>
+                    <p class="amenity-desc">Exclusive sky bar serving fine wines and hand-crafted cocktails.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="offers container">
+        <div class="section-header reveal">
+            <span class="section-subtitle">Unparalleled Exclusives</span>
+            <h2 class="section-title">Special Packages & Offers</h2>
+            <p class="section-desc">Indulge in seasonal promotions and customized hotel packages compiled for your unique requirements.</p>
+        </div>
+
+        <div class="offers-grid">
+            <!-- Offer 1 -->
+            <div class="offer-card reveal delay-1">
+                <div class="offer-img-box">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800" alt="Weekend Escape Offer">
+                </div>
+                <div class="offer-content">
+                    <span class="offer-tag">Limited Time</span>
+                    <h3 class="offer-title">Weekend Escape</h3>
+                    <p class="offer-desc">Escape the routine. Enjoy complimentary Michelin-star breakfast, spa access, and standard late check-out on Sunday.</p>
+                    <div class="offer-meta">
+                        <div class="offer-discount">Save <span>20%</span></div>
+                        <a href="contact.html?promo=weekend" class="offer-link">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Offer 2 -->
+            <div class="offer-card reveal delay-2">
+                <div class="offer-img-box">
+                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=800" alt="Honeymoon Package Offer">
+                </div>
+                <div class="offer-content">
+                    <span class="offer-tag">Romance</span>
+                    <h3 class="offer-title">Honeymoon Package</h3>
+                    <p class="offer-desc">Create timeless memories. Includes premium villa decoration, vintage champagne upon arrival, and a private candlelight dinner.</p>
+                    <div class="offer-meta">
+                        <div class="offer-discount">Save <span>30%</span></div>
+                        <a href="contact.html?promo=honeymoon" class="offer-link">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Offer 3 -->
+            <div class="offer-card reveal delay-1">
+                <div class="offer-img-box">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800" alt="Business Package Offer">
+                </div>
+                <div class="offer-content">
+                    <span class="offer-tag">Corporate</span>
+                    <h3 class="offer-title">Business Package</h3>
+                    <p class="offer-desc">Work meets leisure. High-speed lounge access, private workspace reservation, complimentary suit pressing, and airport transfers.</p>
+                    <div class="offer-meta">
+                        <div class="offer-discount">Save <span>25%</span></div>
+                        <a href="contact.html?promo=business" class="offer-link">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Offer 4 -->
+            <div class="offer-card reveal delay-2">
+                <div class="offer-img-box">
+                    <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=800" alt="Family Vacation Offer">
+                </div>
+                <div class="offer-content">
+                    <span class="offer-tag">Family</span>
+                    <h3 class="offer-title">Family Vacation</h3>
+                    <p class="offer-desc">Unforgettable bonding. Interconnecting suites, kids club admission, and a guided family excursion tour included.</p>
+                    <div class="offer-meta">
+                        <div class="offer-discount">Save <span>15%</span></div>
+                        <a href="contact.html?promo=family" class="offer-link">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Guest Reflections</span>
+                <h2 class="section-title">Stories of Excellence</h2>
+                <p class="section-desc">Discover testimonies from our distinguished guests who have experienced the grandeur of Aurora Grand.</p>
+            </div>
+
+            <div class="testimonials-carousel-container reveal">
+                <button class="carousel-nav-btn prev" aria-label="Previous Review" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="carousel-nav-btn next" aria-label="Next Review" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                
+                <div class="testimonial-track-wrapper">
+                    <div class="testimonial-track">
+                        <!-- Slide 1 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-quote-icon">“</div>
+                            <div class="testimonial-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">The Presidential Suite at Aurora Grand was absolutely breath-taking. The level of custom service was impeccable, and the view from the rooftop lounge is unlike anything else in the world.</p>
+                            <div class="testimonial-guest">
+                                <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150" alt="Sarah Jenkins" width="70" height="70" loading="lazy">
+                                <span class="testimonial-name">Sarah Jenkins</span>
+                                <span class="testimonial-role">Business Executive</span>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-quote-icon">“</div>
+                            <div class="testimonial-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">A true five-star experience. The spa treatments were world-class and the attention to detail in every aspect of the room design was remarkable. Worth every single penny.</p>
+                            <div class="testimonial-guest">
+                                <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150" alt="Michael Chen" width="70" height="70" loading="lazy">
+                                <span class="testimonial-name">Michael Chen</span>
+                                <span class="testimonial-role">Travel Blogger</span>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-quote-icon">“</div>
+                            <div class="testimonial-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">Our honeymoon villa was a dream come true. The private pool and direct beach access made our stay absolutely unforgettable. We will definitely return next year!</p>
+                            <div class="testimonial-guest">
+                                <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150" alt="Emma Watson" width="70" height="70" loading="lazy">
+                                <span class="testimonial-name">Emma &amp; David Watson</span>
+                                <span class="testimonial-role">Honeymooners</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-dots">
+                    <!-- Dots will be generated dynamically by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-item reveal delay-1">
+                <span class="stat-number" data-target="50+">0</span>
+                <span class="stat-title">Luxury Rooms</span>
+            </div>
+            
+            <div class="stat-item reveal delay-2">
+                <span class="stat-number" data-target="10,000+">0</span>
+                <span class="stat-title">Happy Guests</span>
+            </div>
+
+            <div class="stat-item reveal delay-3">
+                <span class="stat-number" data-target="25">0</span>
+                <span class="stat-title">Awards Won</span>
+            </div>
+
+            <div class="stat-item reveal delay-4">
+                <span class="stat-number" data-target="15">0</span>
+                <span class="stat-title">Years of Excellence</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="font-size: 1.75rem; margin-bottom: 1.5rem;">
+                    <i class="fa-solid fa-crown" style="color: var(--gold); margin-right: 0.25rem;"></i> Aurora Grand
+                </a>
+                <p class="footer-col-desc" style="margin-bottom: 1.5rem;">Experience absolute five-star luxury with customized spa services, gourmet foods, and opulent ocean suites.</p>
+                <div class="footer-contact-info" style="margin-bottom: 1.75rem; font-size: 0.85rem; color: var(--text-light); line-height: 1.8;">
+                    <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-location-dot" style="color: var(--gold); margin-right: 0.75rem; width: 14px;"></i> 122 Luxury Avenue, ECR, Chennai, India</p>
+                    <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: var(--gold); margin-right: 0.75rem; width: 14px;"></i> +91 44 234 5678</p>
+                    <p><i class="fa-solid fa-envelope" style="color: var(--gold); margin-right: 0.75rem; width: 14px;"></i> reservations@auroragrand.com</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="#" class="footer-social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Col 2 -->
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="rooms.html">Rooms &amp; Suites</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+
+            <!-- Col 3 -->
+            <div class="footer-col">
+                <h4 class="footer-title">Our Services</h4>
+                <div class="footer-links">
+                    <a href="rooms.html">Room Booking</a>
+                    <a href="index.html#amenities">Spa &amp; Wellness</a>
+                    <a href="index.html#amenities">Fine Dining</a>
+                    <a href="index.html#offers">Special Events</a>
+                    <a href="index.html#amenities">Airport Pickup</a>
+                </div>
+            </div>
+
+            <!-- Col 4 -->
+            <div class="footer-col">
+                <h4 class="footer-title">Newsletter</h4>
+                <p class="footer-newsletter-text">Subscribe to our newsletter to receive updates on exclusive VIP promotional packages.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Aurora Grand Luxury Hotel. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms &amp; Conditions</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- Tawk.to Live Chat Widget -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/64aff1bbcc26a871b028448a/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+</body>
+</html>
