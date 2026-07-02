@@ -8,7 +8,7 @@ Deployed Live on Netlify: 👉 **[https://aurora-grand-ecr.netlify.app](https://
 
 ## 📖 Selected Topic
 *   **Topic**: Hotel / Hospitality
-*   **Target Location**: East Coast Road (ECR), Kovalam, Chennai, India
+*   **Location**: East Coast Road (ECR), Kovalam, Chennai, India
 
 ---
 
